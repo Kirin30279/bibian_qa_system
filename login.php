@@ -6,6 +6,8 @@
     <title>會員登入頁</title>
   </head>
   <body>
-    會員登入頁
+    <div id="container"></div>
+
+    <script src="dist/login.min.js"></script>
   </body>
 </html>
