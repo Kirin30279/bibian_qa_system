@@ -4,14 +4,6 @@ import Breadcrumb from "./breadcrumb";
 import Pagination from "./pagination";
 
 
-// 分頁區塊
-const HocPagination = (props: any) => {
-  const [nowPage, setNowPage] = React.useState(1);
-  const [totalPage, setTotalPage] = React.useState(1);
-
-  return <Pagination nowPage={nowPage} totalPage={totalPage} {...props} />
-}
-
 // 麵包屑區塊
 const HocBreadcrumb = (props: any) => {
   const [scope, setScope] = React.useState(<></>);
@@ -67,6 +59,14 @@ const HocList = (props: any) => {
       </tbody>
     </table>
   );
+}
+
+// 分頁區塊
+const HocPagination = (props: any) => {
+  const [nowPage, setNowPage] = React.useState(1);
+  const [totalPage, setTotalPage] = React.useState(1);
+
+  return <Pagination nowPage={nowPage} totalPage={totalPage} {...props} />
 }
 
 export default (props: any) => {
