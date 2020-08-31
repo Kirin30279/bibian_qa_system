@@ -38,12 +38,12 @@
     \* 回傳data格式
     ```javascript
     [{
-      orderID: "",
-      otderType: "",
-      nation: "",
-      memberName: "",
-      createdTime: "",
-      status: ""
+      orderID: "", // 訂單編號
+      otderType: "", // 訂單類型（代購單還是代標單)
+      nation: "", // 國別
+      memberName: "", // 發問會員名稱
+      createdTime: "", // 發問日期
+      qaStatus: "" // 處理狀態
     }, ...]
     ```
 
@@ -68,10 +68,10 @@
       status: "", // 處理狀態
       isSend: "", // 是否要寄信
       items: [{
-        name: "",
-        createdTime: "",
-        contents: "",
-        files: "",
+        name: "", // 會員/專員名稱
+        createdTime: "", // 問題/回應時間
+        contents: "", // 問題/回應內容
+        files: "", // 問題/回應附件
       }, ...]
     }
     ```
@@ -82,9 +82,9 @@
     |參數名稱|參數說明|必要|
     |---|---|---|
     |act|需求辨別值|v|
-    |content|回覆內容|v|
-    |issend|是否要發信|v|
-    |status|處理狀態|v|
+    |qaContent|回覆內容|v|
+    |isSend|是否要發信|v|
+    |qaStatus|處理狀態|v|
 
     ##### Response
 
@@ -107,7 +107,7 @@
     |---|---|---|
     |act|需求辨別值|v|
     |oid|訂單編號|v|
-    |content|問題內容|v|
-    |qafiles|問題附件|x|
+    |qaContent|問題內容|v|
+    |qaFiles|問題附件|x|
 
     ##### Response
