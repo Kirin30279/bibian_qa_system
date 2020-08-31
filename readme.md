@@ -7,11 +7,11 @@
   + login.php
 
     ##### Request
-    |參數名稱|參數說明|必要|
-    |---|---|---|
-    |act|需求辨別值|v|
-    |account|登入帳號|v|
-    |passwd|登入密碼|v|
+    |參數名稱|參數說明|預設值|必要|
+    |---|---|---|---|
+    |act|需求辨別值|checkLogin|v|
+    |account|登入帳號||v|
+    |passwd|登入密碼||v|
 
     ##### Response
 
@@ -23,10 +23,10 @@
   + index.php
 
     ##### Request
-    |參數名稱|參數說明|必要|
-    |---|---|---|
-    |act|需求辨別值|v|
-    |page|頁數|v|
+    |參數名稱|參數說明|預設值|必要|
+    |---|---|---|---|
+    |act|需求辨別值|checkQAList|v|
+    |page|頁數||v|
 
     ##### Response
     |參數名稱|參數說明|必要|
@@ -50,10 +50,10 @@
   + detail.php
 
     ##### Request
-    |參數名稱|參數說明|必要|
-    |---|---|---|
-    |act|需求辨別值|v|
-    |oid|訂單編號|v|
+    |參數名稱|參數說明|預設值|必要|
+    |---|---|---|---|
+    |act|需求辨別值|checkQADetail|v|
+    |oid|訂單編號||v|
 
     ##### Response
     |參數名稱|參數說明|必要|
@@ -79,12 +79,12 @@
   + 新增寫入回覆api
 
     ##### Request
-    |參數名稱|參數說明|必要|
-    |---|---|---|
-    |act|需求辨別值|v|
-    |qaContent|回覆內容|v|
-    |isSend|是否要發信|v|
-    |qaStatus|處理狀態|v|
+    |參數名稱|參數說明|預設值|必要|
+    |---|---|---|---|
+    |act|需求辨別值|checkUpdateQASContent|v|
+    |qaContent|回覆內容||v|
+    |isSend|是否要發信||v|
+    |qaStatus|處理狀態||v|
 
     ##### Response
 
@@ -96,10 +96,10 @@
   + 新增圖片上傳api
 
     ##### Request
-    |參數名稱|參數說明|必要|
-    |---|---|---|
-    |act|需求辨別值|v|
-    |upload|上傳內容|v|
+    |參數名稱|參數說明|預設值|必要|
+    |---|---|---|---|
+    |act|需求辨別值|checkUpdateQAFiles|v|
+    |upload|上傳內容||v|
 
     ##### Response
 
@@ -129,12 +129,12 @@
   + qa.php
 
     ##### Request
-    |參數名稱|參數說明|必要|
-    |---|---|---|
-    |act|需求辨別值|v|
-    |oid|訂單編號|v|
-    |qaContent|問題內容|v|
-    |qaFiles|問題附件|x|
+    |參數名稱|參數說明|預設值|必要|
+    |---|---|---|---|
+    |act|需求辨別值|checkUpdateQACContent|v|
+    |oid|訂單編號||v|
+    |qaContent|問題內容||v|
+    |qaFiles|問題附件||x|
 
     ##### Response
 
