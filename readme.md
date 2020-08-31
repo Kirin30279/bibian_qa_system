@@ -1,3 +1,11 @@
++ 測試帳號
+
+  + 管理帳號
+    bibianadmin@bibian.com / bibians12345
+
+  + 客戶帳號
+    bibianclient@bibian.com / bibianc12345
+
 + 管理端
 
   |傳送方式|Api Url|
