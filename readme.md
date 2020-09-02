@@ -27,6 +27,7 @@
     |---|---|---|
     |status|登入是否成功|v|
     |message|若失敗，回傳錯誤說明|v|
+    |data|base64字串|v|
 
   + index.php
 
@@ -90,6 +91,7 @@
     |參數名稱|參數說明|預設值|必要|
     |---|---|---|---|
     |act|需求辨別值|checkUpdateQASContent|v|
+    |oid|訂單編號||v|
     |qaContent|回覆內容||v|
     |isSend|是否要發信||v|
     |qaStatus|處理狀態||v|
