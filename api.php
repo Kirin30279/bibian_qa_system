@@ -27,22 +27,17 @@ if (!$islogin){
 
 switch ($act) {
     case 'checkQAList':// index.php--應要分為客服查詢or客戶查詢，或者禁止客戶訪問  
-        //！！！這裡要改，這邊目前是抓全部data，格式以SQL命名，並非所需格式！！！//        
             $page = $_POST['page'];//顯示第n頁，等等會做計算，這裡不用跳脫
             include './func/getQAListDataByPage.php';
             $result = getQAListDataByPage($page,$connect);
             echo json_encode($result);     
-        //！！！這裡要改，這邊目前是抓全部data，格式以SQL命名，並非所需格式！！！// 
         break;
         
     case 'checkQADetail':// detail.php
-        //！！！這裡要改，這邊目前是抓全部data，格式以SQL命名，並非所需格式！！！// 
             $oid = $_POST['oid'];//會用正則表達確認資料，不用跳脫
             include './func/getQADetailByoid.php';
             $result = getQADetailByoid($oid,$connect);
             echo json_encode($result);
-        //！！！這裡要改，這邊目前是抓全部data，格式以SQL命名，並非所需格式！！！// 
-
         break;
           
     case 'checkUpdateQASContent':// 寫入專員回覆
