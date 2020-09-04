@@ -27,24 +27,13 @@ function writeQAServiceContent($login_token,$oid,$qa_content,$is_send,$qa_status
     
     $insertSql = 
      "INSERT INTO customer_qa(oid,oid_Question,PicFile,user_id,time,IsCustomer)
-    VALUES ($oid,'$qa_content','','$user_id','$date',0)"; 
-
-    $insertSQL_QA_list = 
-    "UPDATE qa_list 
-    SET `renew_time`='$date',`isSend`=$is_send,`status`=$qa_status 
-    WHERE oid = $oid";
-
-    mysqli_query($connect, $insertSql);
-    mysqli_query($connect, $insertSQL_QA_list);
+        VALUES ($oid,'$qa_content','','$user_id','$date',0);
+    UPDATE qa_list 
+        SET `renew_time`='$date',`isSend`=$is_send,`status`=$qa_status 
+        WHERE oid = $oid;"; 
+   
+    $SQL_query = $connect->multi_query($insertSql);
     $result['status'] = true;
     return $result;
 }
-
-
-
-
-
-
-
-
 ?>
