@@ -19,11 +19,6 @@ function getQAListDataByPage($page,$connect){
     LIMIT $showNum,50";     
 
     $SQL_result = $connect->query($QA_list_SQL);
-    if (!$SQL_result) {
-        $message = "資料庫指令出錯。";
-        $result['message'] = $message;
-        return $result; 
-    }
 
     $rows = $SQL_result->num_rows;
     if ($rows==0) {
@@ -31,20 +26,24 @@ function getQAListDataByPage($page,$connect){
         $result['message'] = $message;
         return $result; 
     }
+    
+    $QAListData  = $SQL_result->fetch_all(MYSQLI_ASSOC); 
 
-    for ($j = 0 ; $j < $rows ; ++$j){
-        $data_tmp = $SQL_result->fetch_array(MYSQLI_ASSOC);
-        $data[$j]['orderID']     = $data_tmp['oid'];
-        $data[$j]['otderType']   = $data_tmp['type'];
-        $data[$j]['nation']      = $data_tmp['Nation'];
-        $data[$j]['memberName']  = $data_tmp['user_id'];
-        $data[$j]['createdTime'] = $data_tmp['create_time'];
-        $data[$j]['qaStatus']    = $data_tmp['status'];
-    }
+    $QAListData = array_map(function($QAListData) {
+        return array(
+            'orderID'     => $QAListData['oid'],
+            'otderType'   => $QAListData['type'],
+            'nation'      => $QAListData['Nation'],
+            'memberName'  => $QAListData['user_id'],
+            'createdTime' => $QAListData['create_time'],
+            'qaStatus'    => $QAListData['status']
+        );
+    }, $QAListData);
+
     $result = array(
         'status' => true,
         'message'=> '',
-        'data' => $data
+        'data' => $QAListData
     );
     return $result;
 }
