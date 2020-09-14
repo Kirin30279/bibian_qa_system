@@ -37,11 +37,7 @@ const HocQA = (props: any) => {
       <label>問題附件</label>
       <input type="file" className="form-control" />
     </div>
-    <a href="#" className="btn btn-primary" onClick={(e) => {
-        e.preventDefault();
-      }}>送出</a> <a href="#" className="btn btn-danger" onClick={(e) => {
-        e.preventDefault();
-      }}>取消</a>
+    <a href="javascript:;" className="btn btn-primary">送出</a> <a href="javascript:;" className="btn btn-danger">取消</a>
     </>
   );
 }
