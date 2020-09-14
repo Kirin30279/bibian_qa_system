@@ -1,5 +1,5 @@
-<?PHP
-function loginCheck($data){
+<?php
+function loginStatusCheck($data){
     $data = json_decode(base64_decode($data),true);
     $result = false;
     
@@ -7,12 +7,11 @@ function loginCheck($data){
         return false;
     } 
     $inTime = $data["expiretime"]-time();
-    //登入過期
-    if($inTime<=0){
+   
+    if($inTime<=0){//登入過期
        return false;
     }
    
     return true;
 }
 ?>
-
